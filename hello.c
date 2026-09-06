@@ -2,7 +2,7 @@
 
 int main()
 {
-    printf("hello from jenkins\n");
+    printf("Hello from Jenkins CI - Build 2!\n");
     printf("bye from jenkins!!!");
     return 0;
 }
