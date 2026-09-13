@@ -20,5 +20,10 @@ pipeline {
                 sh 'docker build -t hello:latest .'
             }
         }
+        stage('Run Docker Image'){
+            steps{
+                sh 'docker run hello'
+            }
+        }
     }
 }
