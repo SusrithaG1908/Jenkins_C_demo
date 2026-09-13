@@ -7,24 +7,25 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'gcc hello.c -o hello'
+                bat 'gcc hello.c -o hello.exe'
             }
         }
 
         stage('Run') {
             steps {
-                sh './hello'
+                bat 'hello.exe'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t hello:latest .'
+                bat 'docker build -t hello:latest .'
             }
         }
-        stage('Run Docker Image'){
-            steps{
-                sh 'docker run hello'
+
+        stage('Run Docker Image') {
+            steps {
+                bat 'docker run --rm hello:latest'
             }
         }
     }
