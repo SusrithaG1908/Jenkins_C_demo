@@ -1,0 +1,22 @@
+```yaml
+name: C CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile hello.c
+        run: gcc hello.c -o hello
+
+      - name: Run program
+        run: ./hello
+```
